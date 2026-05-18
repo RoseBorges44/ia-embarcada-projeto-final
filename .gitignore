@@ -1,0 +1,78 @@
+# ============================================================
+# pico-tflmicro (porte oficial do TFLite Micro pro RP2040)
+# ~300 MB, não é código nosso, instrução de clonar está no COMO_TESTAR.md
+# ============================================================
+pico-tflmicro/
+
+# ============================================================
+# Build artifacts do CMake/Ninja
+# ============================================================
+firmware/build/
+firmware/**/build/
+build/
+*.o
+*.obj
+*.a
+*.lib
+*.elf
+*.map
+*.dis
+*.bin
+*.hex
+# NOTA: .uf2 NÃO é ignorado de propósito — vamos colocar o
+# binário final em dist/ pra quem clonar conseguir flashar
+# sem precisar compilar.
+
+# ============================================================
+# CMake gerado
+# ============================================================
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+.ninja_deps
+.ninja_log
+build.ninja
+*.pio.h
+
+# ============================================================
+# Python / Colab (treino)
+# ============================================================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# ============================================================
+# Dataset do Speech Commands (baixado pelo notebook, é GRANDE)
+# ============================================================
+treino/data/
+treino/speech_commands_v0.02/
+treino/*.tar.gz
+treino/*.zip
+
+# ============================================================
+# Editores e IDEs
+# ============================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================================
+# OS
+# ============================================================
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ============================================================
+# Credenciais e segredos (nunca commitar)
+# ============================================================
+*.env
+.env.local
+secrets/
