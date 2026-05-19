@@ -14,7 +14,7 @@ palavras-alvo no microfone e a placa reage acendendo um pictograma
 correspondente na matriz de LEDs 5x5 e mostrando o label no display OLED.
 
 <p align="center">
-  <img src="docs/imgs/bitdoglab.png" alt="BitDogLab v6.3" width="520"/>
+<img width="688" height="342" alt="placa" src="https://github.com/user-attachments/assets/0575c947-57ac-43d5-a093-70e622e1a57d" />
   <br/>
   <em>BitDogLab v6.3 — Raspberry Pi Pico W + matriz WS2812 5×5 + OLED + microfone, tudo já soldado de fábrica.</em>
 </p>
