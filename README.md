@@ -26,7 +26,7 @@ correspondente na matriz de LEDs 5x5 e mostrando o label no display OLED.
 | `happy`*     | smiley          | amarelo  |
 | `yes`        | check ✓         | verde    |
 | `no`         | X               | vermelho |
-| `stop`       | mão de pare     | vermelho |
+| `stop`       | pare            | vermelho |
 | `silence`    | matriz apagada  | -        |
 | `unknown`    | ponto de interr.| azul     |
 
