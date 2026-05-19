@@ -37,7 +37,6 @@ contempladas:
 ```
 Projeto_final/
 ├── README.md               ← este arquivo
-├── ROADMAP.md              ← o que está pronto, o que falta fazer
 ├── COMO_TESTAR.md          ← passo-a-passo Windows: instalar, compilar, flashar, testar
 │
 ├── treino/
