@@ -19,6 +19,11 @@ correspondente na matriz de LEDs 5x5 e mostrando o label no display OLED.
   <em>BitDogLab v6.3 — Raspberry Pi Pico W + matriz WS2812 5×5 + OLED + microfone, tudo já soldado de fábrica.</em>
 </p>
 
+Demo:
+
+https://github.com/user-attachments/assets/ef29a152-7360-4d68-ae2a-0ee4515efe47
+
+
 **Palavras reconhecidas:**
 
 | Palavra (EN) | Pictograma 5x5  | Cor      |
