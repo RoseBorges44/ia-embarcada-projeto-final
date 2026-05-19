@@ -2,7 +2,7 @@
 
 **Disciplina:** UC "IA Embarcada e Modelos Compactos" — UniSENAI
 **Professor:** MSc. Rodrigo Kobashikawa Rosa
-**Aluna:** Rose Borges (RoseBorges44)
+**Grupo:** Rosemeri Borges, Denise Maciel e Andre Joas
 
 ## O que esse projeto faz
 
