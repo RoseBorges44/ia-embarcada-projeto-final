@@ -42,10 +42,9 @@ https://github.com/user-attachments/assets/ef29a152-7360-4d68-ae2a-0ee4515efe47
 > dificuldade do modelo (que foi treinado com falantes de inglês). O
 > pipeline completo está validado — a limitação é específica de `happy`.
 
-## Atende ao escopo do projeto final
+## Escopo do projeto final
 
-A descrição oficial (`Descrição do projeto final.pdf`) pede 4 etapas — todas
-contempladas:
+Projeto final pede 4 etapas:
 
 1. **Coleta de dados de sensores** → microfone analógico da BitDogLab, ADC do RP2040 amostrando a 16 kHz via DMA
 2. **Treinamento de um modelo com dataset público** → Google Speech Commands v2 (dataset oficialmente sugerido pelo prof na Aula 6, slide 39)
@@ -83,7 +82,6 @@ Projeto_final/
 │
 └── docs/
     ├── arquitetura.md      ← visão de blocos pra apresentação
-    └── perguntas_prof.md   ← preparação pras 5 min de perguntas individuais
 ```
 
 ## Como reproduzir
@@ -92,7 +90,7 @@ O projeto já vem com modelo treinado (`modelos/model.tflite`) e firmware
 compilado (`firmware/build/kws_bitdoglab.uf2`). Para recompilar do zero,
 ver `COMO_TESTAR.md`.
 
-**Demo na placa física (5 min):**
+**Demo na placa física:**
 1. Conectar a BitDogLab segurando `BOOTSEL` enquanto pluga o USB-C
 2. Arrastar `firmware/build/kws_bitdoglab.uf2` pra unidade `RPI-RP2`
 3. Falar perto do microfone: `yes`, `no` ou `stop`
