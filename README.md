@@ -1,7 +1,9 @@
 # Projeto Final — IA Embarcada e Modelos Compactos
 
 **Disciplina:** UC "IA Embarcada e Modelos Compactos" — UniSENAI
+
 **Professor:** MSc. Rodrigo Kobashikawa Rosa
+
 **Grupo:** Rosemeri Borges, Denise Maciel e Andre Joas
 
 ## O que esse projeto faz
