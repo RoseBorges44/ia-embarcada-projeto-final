@@ -13,16 +13,29 @@ microcontrolador RP2040 da placa **BitDogLab v6.3**. Você fala uma das
 palavras-alvo no microfone e a placa reage acendendo um pictograma
 correspondente na matriz de LEDs 5x5 e mostrando o label no display OLED.
 
+<p align="center">
+  <img src="docs/imgs/bitdoglab.png" alt="BitDogLab v6.3" width="520"/>
+  <br/>
+  <em>BitDogLab v6.3 — Raspberry Pi Pico W + matriz WS2812 5×5 + OLED + microfone, tudo já soldado de fábrica.</em>
+</p>
+
 **Palavras reconhecidas:**
 
 | Palavra (EN) | Pictograma 5x5  | Cor      |
 | ------------ | --------------- | -------- |
-| `happy`      | smiley          | amarelo  |
+| `happy`*     | smiley          | amarelo  |
 | `yes`        | check ✓         | verde    |
 | `no`         | X               | vermelho |
 | `stop`       | mão de pare     | vermelho |
 | `silence`    | matriz apagada  | -        |
 | `unknown`    | ponto de interr.| azul     |
+
+> \* **Estado validado em maio/2026:** a placa reconhece `yes`, `no` e `stop` com
+> alta confiança. `happy` tem acurácia menor por dois motivos somados: o
+> Speech Commands v2 tem cerca de 3× menos amostras de `happy` que das
+> outras palavras-alvo (treino desbalanceado), e sotaque PT-BR amplifica a
+> dificuldade do modelo (que foi treinado com falantes de inglês). O
+> pipeline completo está validado — a limitação é específica de `happy`.
 
 ## Atende ao escopo do projeto final
 
@@ -56,23 +69,33 @@ Projeto_final/
 │   ├── display.[ch]        ← rotinas de alto nível pro OLED
 │   ├── ssd1306.[ch]        ← driver low-level do OLED via I2C
 │   ├── ssd1306_font.h      ← fonte 8x8
-│   ├── model_data.[ch]     ← PLACEHOLDER — substitua após treinar
-│   └── kissfft/            ← biblioteca de FFT (copiada do upstream)
+│   └── model_data.[ch]     ← modelo treinado convertido em array C
+│
+├── modelos/                ← saída do treino
+│   ├── model.tflite        ← modelo quantizado int8 (~45 KB)
+│   ├── model_data.c        ← idem, em array C
+│   └── model_data.h        ← parâmetros de quantização
 │
 └── docs/
     ├── arquitetura.md      ← visão de blocos pra apresentação
     └── perguntas_prof.md   ← preparação pras 5 min de perguntas individuais
 ```
 
-## Caminho mais curto pra ter funcionando
+## Como reproduzir
 
-1. Abrir `treino/treino_kws.ipynb` no [Google Colab](https://colab.research.google.com)
-2. Rodar todas as células (treino leva ~15 min com GPU gratuita do Colab)
-3. Baixar o `model_data.c` gerado e substituir o arquivo em `firmware/`
-4. Seguir `COMO_TESTAR.md` pra instalar Pico SDK no Windows, compilar e flashar
-5. Conectar a BitDogLab via USB-C, falar "happy" / "yes" / "no" / "stop" e ver a placa reagir
+O projeto já vem com modelo treinado (`modelos/model.tflite`) e firmware
+compilado (`firmware/build/kws_bitdoglab.uf2`). Para recompilar do zero,
+ver `COMO_TESTAR.md`.
 
-Tempo total estimado pra alguém que nunca mexeu com Pico SDK: **2-3 dias** de trabalho.
+**Demo na placa física (5 min):**
+1. Conectar a BitDogLab segurando `BOOTSEL` enquanto pluga o USB-C
+2. Arrastar `firmware/build/kws_bitdoglab.uf2` pra unidade `RPI-RP2`
+3. Falar perto do microfone: `yes`, `no` ou `stop`
+4. Ver pictograma na matriz 5×5 + label no OLED
+
+**Retreinar o modelo:** abrir `treino/treino_kws.ipynb` no Google Colab
+(GPU T4 gratuita), `Run all` (~15-20 min), substituir `firmware/model_data.c`
+pelo arquivo baixado e recompilar.
 
 ## Hardware
 
